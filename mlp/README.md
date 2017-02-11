@@ -1,4 +1,4 @@
-# Machine Learning
+# Scan for best `hidden layer sizes`
 
 ### inspired by
 Deep Learning: Recurrent Neural Networks in Python
