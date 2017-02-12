@@ -13,7 +13,7 @@ import time, threading, multiprocessing
 import os
 
 RESULTFILE="mlp_parity_results.csv"
-INIT=False # True # careful: True overwrites old results file (and writes table header)
+INIT=True # False # True # careful: True overwrites old results file (and writes table header)
 
 AV_RANGE=200 # last 200 results are averaged, to be used as quality functions 
 
@@ -170,6 +170,8 @@ if __name__ == '__main__':
     lr=10e-4
     epochs=200
     hls_ranges=[(1,15), (0,15), (0,15), (0,0)]
+    hls_ranges=[(1,15), (16,40), (0,0), (0,0)]
+    hls_ranges=[(16,40), (1,40), (0,0), (0,0)]
     
     """
     # serial runs
@@ -192,5 +194,6 @@ if __name__ == '__main__':
     deep_structure_scanner_multiprocessing(hls_ranges, lr, epochs, 
                                            max_processes=3)
     print "total time needed (multiprocessing):", (time.time() - t)
+    
     
     
